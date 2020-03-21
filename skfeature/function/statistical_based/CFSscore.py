@@ -37,22 +37,19 @@ def merit_calculation(X, y):
     return merits
 
 
-def cfs(X, y):
+def cfsscore(X, y):
     """
     This function uses a correlation based heuristic to evaluate the worth of features which is called CFS
-
     Input
     -----
     X: {numpy array}, shape (n_samples, n_features)
         input data
     y: {numpy array}, shape (n_samples,)
         input class labels
-
     Output
     ------
     F: {numpy array}
         index of selected features
-
     Reference
     ---------
     Zhao, Zheng et al. "Advancing Feature Selection Research - ASU Feature Selection Repository" 2010.
@@ -84,4 +81,4 @@ def cfs(X, y):
                     if M[len(M)-3] <= M[len(M)-4]:
                         if M[len(M)-4] <= M[len(M)-5]:
                             break
-    return np.array(F)
+    return np.array(Merits)
