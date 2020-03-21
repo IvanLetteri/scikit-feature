@@ -130,4 +130,4 @@ def cfsMscore(X, y):
                     if M[len(M)-3] <= M[len(M)-4]:
                         if M[len(M)-4] <= M[len(M)-5]:
                             break
-return np.array(Merits)
+    return np.array(Merits)
