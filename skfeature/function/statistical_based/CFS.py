@@ -62,6 +62,7 @@ def cfs(X, y):
     F = []
     # M stores the merit values
     M = []
+    Merits = []
     while True:
         merit = -100000000000
         idx = -1
@@ -70,7 +71,7 @@ def cfs(X, y):
                 F.append(i)
                 # calculate the merit of current selected features
                 t = merit_calculation(X[:, F], y)
-                print("merit-score: %.4f feat %d" % (t, i))
+                Merits.append(t)
                 if t > merit:
                     merit = t
                     idx = i
@@ -83,5 +84,5 @@ def cfs(X, y):
                     if M[len(M)-3] <= M[len(M)-4]:
                         if M[len(M)-4] <= M[len(M)-5]:
                             break
-    return np.array(M);
+    return np.array(F), np.array(Merits)
 
