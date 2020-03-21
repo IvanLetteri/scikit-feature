@@ -70,6 +70,7 @@ def cfs(X, y):
                 F.append(i)
                 # calculate the merit of current selected features
                 t = merit_calculation(X[:, F], y)
+                print("merit-score: %.4f feat %d" % (t, i))
                 if t > merit:
                     merit = t
                     idx = i
