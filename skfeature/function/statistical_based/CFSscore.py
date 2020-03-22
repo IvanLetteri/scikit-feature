@@ -61,7 +61,7 @@ def cfsscore(X, y):
     M = []
     Merits = []
     while True:
-        merit = -100000000000
+        merit = -10000000
         idx = -1
         for i in range(n_features):
             if i not in F:
@@ -81,4 +81,4 @@ def cfsscore(X, y):
                     if M[len(M)-3] <= M[len(M)-4]:
                         if M[len(M)-4] <= M[len(M)-5]:
                             break
-    return np.array(Merits)
+    return np.array(M)
