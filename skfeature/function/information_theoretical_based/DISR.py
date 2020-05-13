@@ -39,6 +39,8 @@ def disr(X, y, **kwargs):
     J_DISR = []
     # Mutual information between feature and response
     MIfy = []
+    # dictionary where key:'featIDx' -> value:'j_cmi'
+    dictFeatJcmi = {}
     # indicate whether the user specifies the number of features
     is_n_selected_features_specified = False
 
@@ -89,6 +91,7 @@ def disr(X, y, **kwargs):
         J_DISR.append(j_disr)
         MIfy.append(t1[idx])
         f_select = X[:, idx]
+        dictFeatJcmi[idx] = j_cmi
 
-    return np.array(F), np.array(J_DISR), np.array(MIfy)
+    return np.array(F), np.array(J_DISR), np.array(MIfy), dictFeatJcmi
 
