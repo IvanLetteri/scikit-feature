@@ -44,6 +44,8 @@ def lcsi(X, y, **kwargs):
     J_CMI = []
     # Mutual information between feature and response
     MIfy = []
+    # dictionary where key:'featIDx' -> value:'j_cmi'
+    dictFeatJcmi = {}
     # indicate whether the user specifies the number of features
     is_n_selected_features_specified = False
     # initialize the parameters
@@ -108,8 +110,9 @@ def lcsi(X, y, **kwargs):
         J_CMI.append(j_cmi)
         MIfy.append(t1[idx])
         f_select = X[:, idx]
+        dictFeatJcmi[idx] = j_cmi
 
-    return np.array(F), np.array(J_CMI), np.array(MIfy)
+    return np.array(F), np.array(J_CMI), np.array(MIfy), dictFeatJcmi
 
 
 
