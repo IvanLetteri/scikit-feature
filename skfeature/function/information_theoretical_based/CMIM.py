@@ -96,4 +96,4 @@ def cmim(X, y, **kwargs):
         f_select = X[:, idx]
         dictFeatJcmi[idx] = j_cmim
 
-    return np.array(F), np.array(J_CMIM), np.array(MIfy)
+    return np.array(F), np.array(J_CMIM), np.array(MIfy), dictFeatJcmi
