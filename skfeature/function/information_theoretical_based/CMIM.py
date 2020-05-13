@@ -37,6 +37,8 @@ def cmim(X, y, **kwargs):
     J_CMIM = []
     # Mutual information between feature and response
     MIfy = []
+    # dictionary where key:'featIDx' -> value:'j_cmi'
+    dictFeatJcmi = {}
     # indicate whether the user specifies the number of features
     is_n_selected_features_specified = False
 
@@ -92,5 +94,6 @@ def cmim(X, y, **kwargs):
         J_CMIM.append(j_cmim)
         MIfy.append(t1[idx])
         f_select = X[:, idx]
+        dictFeatJcmi[idx] = j_cmi
 
     return np.array(F), np.array(J_CMIM), np.array(MIfy)
