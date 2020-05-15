@@ -110,7 +110,9 @@ def lcsi(X, y, **kwargs):
         J_CMI.append(j_cmi)
         MIfy.append(t1[idx])
         f_select = X[:, idx]
-        dictFeatJcmi[idx] = round(j_cmi, 6)
+        if 'dict_features' in kwargs.keys():
+            dictOfHeader = kwargs['dict_features']
+            dictFeatJcmi[dictOfHeader[idx]] = round(j_cmi, 6)
     return np.array(F), np.array(J_CMI), np.array(MIfy), dictFeatJcmi
 
 
