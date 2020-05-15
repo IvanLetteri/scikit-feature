@@ -91,7 +91,7 @@ def disr(X, y, **kwargs):
         J_DISR.append(j_disr)
         MIfy.append(t1[idx])
         f_select = X[:, idx]
-        dictFeatJcmi[idx] = j_disr.quantize(Decimal('1e-6')
+        dictFeatJcmi[idx] = Deciaml(j_disr).quantize(Decimal('1e-6')
 
     return np.array(F), np.array(J_DISR), np.array(MIfy), dictFeatJcmi
 
