@@ -110,7 +110,7 @@ def lcsi(X, y, **kwargs):
         J_CMI.append(j_cmi)
         MIfy.append(t1[idx])
         f_select = X[:, idx]
-        dictFeatJcmi[idx] = j_cmi
+        dictFeatJcmi[idx] = j_cmi.quantize(Decimal('1e-6')
 
     return np.array(F), np.array(J_CMI), np.array(MIfy), dictFeatJcmi
 
