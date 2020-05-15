@@ -33,9 +33,10 @@ def mifs(X, y, **kwargs):
         beta = 0.5
     else:
         beta = kwargs['beta']
-    if 'n_selected_features' in kwargs.keys():
+    if('n_selected_features' in kwargs.keys() AND 'dict_features' in kwargs.keys()):
         n_selected_features = kwargs['n_selected_features']
-        F, J_CMI, MIfy, dictFeatJcmi = LCSI.lcsi(X, y, beta=beta, gamma=0, n_selected_features=n_selected_features)
+        dictOfHeader = kwargs['dict_features']
+        F, J_CMI, MIfy, dictFeatJcmi = LCSI.lcsi(X, y, beta=beta, gamma=0, n_selected_features=n_selected_features, dict_features=dictOfHeader)
     else:
         F, J_CMI, MIfy, dictFeatJcmi = LCSI.lcsi(X, y, beta=beta, gamma=0)
     return F, J_CMI, MIfy, dictFeatJcmi
