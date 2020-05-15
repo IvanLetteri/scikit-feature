@@ -90,11 +90,11 @@ def cmim(X, y, **kwargs):
                 if t > j_cmim:
                     j_cmim = t
                     idx = i
-        F.append(idx)
-        J_CMIM.append(j_cmim)
-        MIfy.append(t1[idx])
-        f_select = X[:, idx]
-        if 'dict_features' in kwargs.keys():
-            dictOfHeader = kwargs['dict_features']
-            dictFeatJcmi[dictOfHeader[idx]] = round(t1[idx], 6) 
+            F.append(idx)
+            J_CMIM.append(j_cmim)
+            MIfy.append(t1[idx])
+            f_select = X[:, idx]
+            if 'dict_features' in kwargs.keys():
+                dictOfHeader = kwargs['dict_features']
+                dictFeatJcmi[dictOfHeader[idx]] = round(t1[idx], 6) 
     return np.array(F), np.array(J_CMIM), np.array(MIfy), dictFeatJcmi
