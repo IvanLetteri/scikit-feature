@@ -94,6 +94,6 @@ def cmim(X, y, **kwargs):
         J_CMIM.append(j_cmim)
         MIfy.append(t1[idx])
         f_select = X[:, idx]
-        dictFeatJcmi[idx] = Deciaml(j_cmim).quantize(Decimal('1e-6')
+        dictFeatJcmi[idx] = round(j_cmim, 6)
 
     return np.array(F), np.array(J_CMIM), np.array(MIfy), dictFeatJcmi
