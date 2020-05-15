@@ -31,7 +31,6 @@ def mrmr(X, y, **kwargs):
     """
     if 'n_selected_features' in kwargs.keys():
         n_selected_features = kwargs['n_selected_features']
-    if 'dict_features' in kwargs.keys():
         dictOfHeader = kwargs['dict_features']
             
         F, J_CMI, MIfy, dictFeatJcmi = LCSI.lcsi(X, y, gamma=0, function_name='MRMR', n_selected_features=n_selected_features, dict_features=dictOfHeader)
