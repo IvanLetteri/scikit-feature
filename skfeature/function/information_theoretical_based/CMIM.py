@@ -94,6 +94,7 @@ def cmim(X, y, **kwargs):
         J_CMIM.append(j_cmim)
         MIfy.append(t1[idx])
         f_select = X[:, idx]
-        dictFeatJcmi[idx] = round(j_cmim, 6)
-
+        if 'dict_features' in kwargs.keys():
+            dictOfHeader = kwargs['dict_features']
+            dictFeatJcmi[dictOfHeader[idx]] = round(j_disr, 6) 
     return np.array(F), np.array(J_CMIM), np.array(MIfy), dictFeatJcmi
