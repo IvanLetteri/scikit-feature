@@ -93,6 +93,6 @@ def disr(X, y, **kwargs):
         f_select = X[:, idx]
         if 'dict_features' in kwargs.keys():
             dictOfHeader = kwargs['dict_features']
-            dictFeatJcmi[dictOfHeader[idx]] = round((j_disr*10000), 6)   
+            dictFeatJcmi[dictOfHeader[idx]] = j_disr  
     return np.array(F), np.array(J_DISR), np.array(MIfy), dictFeatJcmi
 
